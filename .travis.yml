@@ -13,5 +13,5 @@ before_script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 script:
   - pytest
-  - docker build -t cschreep/hello-world -f Dockerfile .
-  - docker push cschreep/hello-world
+  - make build
+  - make publish
